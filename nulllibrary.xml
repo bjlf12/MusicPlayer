@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<library>
+    <musicLibrary>
+        <path>C:\Users\pc\Downloads</path>
+        <fileNum>1</fileNum>
+        <lastId>2</lastId>
+    </musicLibrary>
+    <songs>
+        <song>
+            <id>0</id>
+            <title>Lone Digger</title>
+            <artist>Caravan Palace</artist>
+            <album>Lone Digger</album>
+            <length>170</length>
+            <trackNumber>0</trackNumber>
+            <discNumber>0</discNumber>
+            <playCount>0</playCount>
+            <playDate>2020-11-30T17:58:19.643</playDate>
+            <location>C:\Users\pc\Downloads\caravan-palace-lone-digger.mp3</location>
+        </song>
+        <song>
+            <id>1</id>
+            <title>Bullets</title>
+            <artist>Archive</artist>
+            <album>Controlling Crowds (Parts I-III)</album>
+            <length>354</length>
+            <trackNumber>0</trackNumber>
+            <discNumber>0</discNumber>
+            <playCount>0</playCount>
+            <playDate>2020-11-30T17:58:19.649</playDate>
+            <location>C:\Users\pc\Downloads\cyberpunk-2077-soundtrack-bullets-by-archive.mp3</location>
+        </song>
+    <song>
+            <id>2</id>
+            <title>Smooth</title>
+            <artist>Santana</artist>
+            <album>Smooth</album>
+            <length>256</length>
+            <trackNumber>0</trackNumber>
+            <discNumber>0</discNumber>
+            <playCount>0</playCount>
+            <playDate>2020-12-09T01:30:15.520</playDate>
+            <location>C:\Users\pc\Downloads\santana-smooth-ft-rob-thomas-official-video.mp3</location>
+        </song>
+    </songs>
+    <playlists/>
+    <nowPlayingList/>
+</library>
