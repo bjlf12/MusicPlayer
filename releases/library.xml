@@ -26,8 +26,8 @@
             <length>156</length>
             <trackNumber>0</trackNumber>
             <discNumber>0</discNumber>
-            <playCount>2</playCount>
-            <playDate>2020-12-14T19:07:33.773</playDate>
+            <playCount>0</playCount>
+            <playDate>2020-12-14T18:32:20.156</playDate>
             <location>C:\Users\pc\Desktop\MusicPlayer\resources\No Te Contaron Mal.mp3</location>
         </song>
         <song>
@@ -48,13 +48,7 @@
             
         
         
-        
-        
-        
-        
         </playlist>
-    
-    
     </playlists>
     <nowPlayingList/>
 </library>
