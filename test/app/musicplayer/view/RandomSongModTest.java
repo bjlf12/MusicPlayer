@@ -9,13 +9,13 @@ import org.sikuli.script.Screen;
 
 import static org.junit.jupiter.api.Assertions.assertNull;
 
-public class EliminateSongInPlaylist {
+public class RandomSongModTest {
 
     @Test
-    public void EliminateSong() throws InterruptedException, FindFailed {
+    public void RandomSongPlayed() throws InterruptedException, FindFailed {
 
         Screen screen = new Screen();
-        ImagePath.add("test\\resources\\EliminateSongFromPlaylist");
+        ImagePath.add("test\\resources\\RandomSongModTest");
         Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
@@ -34,14 +34,21 @@ public class EliminateSongInPlaylist {
             }
         });
         thread.start();
+        Thread.sleep(2000);
         screen.click("playlist.png");
+        Thread.sleep(500);
+        screen.click("Random.png");
         Thread.sleep(1000);
-        screen.click("smooth.png");
-        Thread.sleep(1000);
-        screen.click("eliminateSong.png");
-        Thread.sleep(1000);
-        assertNull(screen.exists("smooth.png"));
+        screen.click("PlayPlaylist.png");
+        Thread.sleep(2000);
+        screen.click("Next.png");
+        Thread.sleep(2000);
+        screen.click("Next.png");
+        Thread.sleep(2000);
+        screen.click("Next.png");
+        Thread.sleep(2000);
+        screen.click("Next.png");
+        Thread.sleep(2000);
         //thread.stop();
     }
-
 }

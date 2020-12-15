@@ -48,7 +48,14 @@
             
         
         
+        <songId>0</songId>
+        <songId>1</songId>
+        <songId>2</songId>
         </playlist>
     </playlists>
-    <nowPlayingList/>
+    <nowPlayingList>
+        <id>0</id>
+        <id>1</id>
+        <id>2</id>
+    </nowPlayingList>
 </library>
