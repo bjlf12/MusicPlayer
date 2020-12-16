@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<library>
+    <musicLibrary>
+        <path>C:\Users\Kenneth\Downloads\resources</path>
+        <fileNum>3</fileNum>
+        <lastId>2</lastId>
+    </musicLibrary>
+    <songs>
+        <song>
+            <id>0</id>
+            <title>Miracle Mile</title>
+            <artist>Cold War Kids</artist>
+            <album>Dear Miss Lonelyhearts</album>
+            <length>180</length>
+            <trackNumber>0</trackNumber>
+            <discNumber>0</discNumber>
+            <playCount>0</playCount>
+            <playDate>2020-12-09T06:22:35.156</playDate>
+            <location>C:\Users\Kenneth\Downloads\resources\Miracle Mile_256k.mp3</location>
+        </song>
+        <song>
+            <id>1</id>
+            <title>No Te Contaron Mal.mp3</title>
+            <artist>Christian Nodal</artist>
+            <album>Ahora</album>
+            <length>156</length>
+            <trackNumber>0</trackNumber>
+            <discNumber>0</discNumber>
+            <playCount>0</playCount>
+            <playDate>2020-12-09T06:22:35.160</playDate>
+            <location>C:\Users\Kenneth\Downloads\resources\No Te Contaron Mal.mp3</location>
+        </song>
+        <song>
+            <id>2</id>
+            <title>Smooth</title>
+            <artist>Santana</artist>
+            <album>Supernatural</album>
+            <length>295</length>
+            <trackNumber>0</trackNumber>
+            <discNumber>0</discNumber>
+            <playCount>0</playCount>
+            <playDate>2020-12-09T06:22:35.164</playDate>
+            <location>C:\Users\Kenneth\Downloads\resources\Smooth.mp3</location>
+        </song>
+    </songs>
+    <playlists>
+        <playlist id="0" title="ciclica">
+            <songId>0</songId>
+        </playlist>
+    </playlists>
+    <nowPlayingList/>
+</library>
