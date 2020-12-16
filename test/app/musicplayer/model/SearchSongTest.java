@@ -6,7 +6,7 @@ import javafx.embed.swing.JFXPanel;
 import javafx.stage.Stage;
 import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.sikuli.script.FindFailed;
 import org.sikuli.script.ImagePath;
 import org.sikuli.script.Screen;
