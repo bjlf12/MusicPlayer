@@ -1,3 +1,5 @@
+package app.musicplayer.view;
+
 import app.musicplayer.MusicPlayer;
 import javafx.application.Platform;
 import javafx.embed.swing.JFXPanel;
@@ -40,6 +42,7 @@ public class PauseSongTest {
         Thread.sleep(3000);
         screen.click("Pause.png");
         Thread.sleep(2000);
+        screen.click("playlist.png");
         screen.click("Play.png");
         Thread.sleep(3000);
         assertNotNull(screen.exists("Pause.png"));

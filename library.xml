@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <library>
     <musicLibrary>
-        <path>C:\Users\Kenneth\Downloads\resources</path>
+        <path>C:\Users\Usuario\Downloads\MusicPlayer-master\MusicPlayer\resources</path>
         <fileNum>3</fileNum>
         <lastId>2</lastId>
     </musicLibrary>
@@ -15,8 +15,8 @@
             <trackNumber>0</trackNumber>
             <discNumber>0</discNumber>
             <playCount>0</playCount>
-            <playDate>2020-12-09T06:28:42.734</playDate>
-            <location>C:\Users\Kenneth\Downloads\resources\Miracle Mile_256k.mp3</location>
+            <playDate>2020-12-15T19:23:32.494</playDate>
+            <location>C:\Users\Usuario\Downloads\MusicPlayer-master\MusicPlayer\resources\Miracle Mile_256k.mp3</location>
         </song>
         <song>
             <id>1</id>
@@ -26,9 +26,9 @@
             <length>156</length>
             <trackNumber>0</trackNumber>
             <discNumber>0</discNumber>
-            <playCount>0</playCount>
-            <playDate>2020-12-09T06:28:42.739</playDate>
-            <location>C:\Users\Kenneth\Downloads\resources\No Te Contaron Mal.mp3</location>
+            <playCount>2</playCount>
+            <playDate>2020-12-15T19:48:47.820</playDate>
+            <location>C:\Users\Usuario\Downloads\MusicPlayer-master\MusicPlayer\resources\No Te Contaron Mal.mp3</location>
         </song>
         <song>
             <id>2</id>
@@ -39,14 +39,24 @@
             <trackNumber>0</trackNumber>
             <discNumber>0</discNumber>
             <playCount>0</playCount>
-            <playDate>2020-12-09T06:28:42.744</playDate>
-            <location>C:\Users\Kenneth\Downloads\resources\Smooth.mp3</location>
+            <playDate>2020-12-15T19:23:32.500</playDate>
+            <location>C:\Users\Usuario\Downloads\MusicPlayer-master\MusicPlayer\resources\Smooth.mp3</location>
         </song>
     </songs>
     <playlists>
-        <playlist id="0" title="ciclica">
+        <playlist id="0" title="Ciclica">
             <songId>0</songId>
         </playlist>
+    <playlist id="1" title="test">
+            <songId>1</songId>
+        <songId>0</songId>
+        
+        
+        </playlist>
+    
+    <playlist id="2" title="test 1"/>
     </playlists>
-    <nowPlayingList/>
+    <nowPlayingList>
+        <id>0</id>
+    </nowPlayingList>
 </library>

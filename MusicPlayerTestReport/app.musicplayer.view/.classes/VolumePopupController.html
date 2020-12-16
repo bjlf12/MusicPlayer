@@ -1,0 +1,148 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: VolumePopupController</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">app.musicplayer.view</a> ]
+</div>
+
+<h1>Coverage Summary for Class: VolumePopupController (app.musicplayer.view)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">VolumePopupController</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    71,4%
+  </span>
+  <span class="absValue">
+    (5/ 7)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    48,1%
+  </span>
+  <span class="absValue">
+    (13/ 27)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package app.musicplayer.view;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import java.net.URL;
+<i>4</i>&nbsp;import java.util.ResourceBundle;
+<i>5</i>&nbsp;
+<i>6</i>&nbsp;import app.musicplayer.MusicPlayer;
+<i>7</i>&nbsp;import app.musicplayer.util.CustomSliderSkin;
+<i>8</i>&nbsp;import javafx.css.PseudoClass;
+<i>9</i>&nbsp;import javafx.fxml.FXML;
+<i>10</i>&nbsp;import javafx.fxml.Initializable;
+<i>11</i>&nbsp;import javafx.scene.control.Label;
+<i>12</i>&nbsp;import javafx.scene.control.Slider;
+<i>13</i>&nbsp;import javafx.scene.layout.Pane;
+<i>14</i>&nbsp;import javafx.scene.layout.Region;
+<i>15</i>&nbsp;
+<b class="fc"><i>16</i>&nbsp;public class VolumePopupController implements Initializable {</b>
+<i>17</i>&nbsp;
+<i>18</i>&nbsp;	@FXML private Slider volumeSlider;
+<i>19</i>&nbsp;	@FXML private Region frontVolumeTrack;
+<i>20</i>&nbsp;	@FXML private Label volumeLabel;
+<i>21</i>&nbsp;	@FXML private Pane muteButton;
+<i>22</i>&nbsp;	@FXML private Pane mutedButton;
+<i>23</i>&nbsp;
+<i>24</i>&nbsp;	@Override
+<i>25</i>&nbsp;	public void initialize(URL location, ResourceBundle resources) {
+<i>26</i>&nbsp;		try {
+<i>27</i>&nbsp;
+<b class="fc"><i>28</i>&nbsp;			CustomSliderSkin sliderSkin = new CustomSliderSkin(volumeSlider);</b>
+<b class="fc"><i>29</i>&nbsp;			volumeSlider.setSkin(sliderSkin);</b>
+<b class="fc"><i>30</i>&nbsp;			frontVolumeTrack.prefWidthProperty().bind(volumeSlider.widthProperty().subtract(30).multiply(volumeSlider.valueProperty().divide(volumeSlider.maxProperty())));</b>
+<b class="fc"><i>31</i>&nbsp;			volumeSlider.valueProperty().addListener((x, y, z) -&gt; {</b>
+<b class="fc"><i>32</i>&nbsp;				volumeLabel.setText(Integer.toString(z.intValue()));</b>
+<b class="fc"><i>33</i>&nbsp;			});</b>
+<b class="fc"><i>34</i>&nbsp;			volumeSlider.setOnMousePressed(x -&gt; {</b>
+<b class="fc"><i>35</i>&nbsp;				if (mutedButton.isVisible()) {</b>
+<b class="nc"><i>36</i>&nbsp;					muteClick();</b>
+<i>37</i>&nbsp;				}
+<b class="fc"><i>38</i>&nbsp;			});</b>
+<i>39</i>&nbsp;
+<b class="nc"><i>40</i>&nbsp;		} catch (Exception ex) {</b>
+<i>41</i>&nbsp;
+<b class="nc"><i>42</i>&nbsp;			ex.printStackTrace();</b>
+<b class="fc"><i>43</i>&nbsp;		}</b>
+<b class="fc"><i>44</i>&nbsp;	}</b>
+<i>45</i>&nbsp;
+<i>46</i>&nbsp;	Slider getSlider() {
+<b class="fc"><i>47</i>&nbsp;		return volumeSlider;</b>
+<i>48</i>&nbsp;	}
+<i>49</i>&nbsp;
+<i>50</i>&nbsp;	@FXML private void volumeClick() {
+<b class="nc"><i>51</i>&nbsp;		MusicPlayer.getMainController().volumeClick();</b>
+<b class="nc"><i>52</i>&nbsp;	}</b>
+<i>53</i>&nbsp;
+<i>54</i>&nbsp;	@FXML private void muteClick() {
+<i>55</i>&nbsp;
+<b class="nc"><i>56</i>&nbsp;		PseudoClass muted = PseudoClass.getPseudoClass(&quot;muted&quot;);</b>
+<b class="nc"><i>57</i>&nbsp;		boolean isMuted = mutedButton.isVisible();</b>
+<b class="nc"><i>58</i>&nbsp;		muteButton.setVisible(isMuted);</b>
+<b class="nc"><i>59</i>&nbsp;		mutedButton.setVisible(!isMuted);</b>
+<b class="nc"><i>60</i>&nbsp;		volumeSlider.pseudoClassStateChanged(muted, !isMuted);</b>
+<b class="nc"><i>61</i>&nbsp;		frontVolumeTrack.pseudoClassStateChanged(muted, !isMuted);</b>
+<b class="nc"><i>62</i>&nbsp;		volumeLabel.pseudoClassStateChanged(muted, !isMuted);</b>
+<b class="nc"><i>63</i>&nbsp;		MusicPlayer.mute(isMuted);</b>
+<b class="nc"><i>64</i>&nbsp;	}</b>
+<i>65</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2020-12-15 20:05</div>
+</div>
+</body>
+</html>

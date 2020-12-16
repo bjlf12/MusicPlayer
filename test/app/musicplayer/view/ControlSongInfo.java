@@ -40,6 +40,9 @@ public class ControlSongInfo {
         thread.start();
         screen.click("songs.png");
         Thread.sleep(3000);
-        assertNotNull(screen.exists("songinfo.png"));
+        assertNotNull(screen.exists("name.png"));
+        assertNotNull(screen.exists("album.png"));
+        assertNotNull(screen.exists("length.png"));
+        assertNotNull(screen.exists("artist.png"));
     }
 }

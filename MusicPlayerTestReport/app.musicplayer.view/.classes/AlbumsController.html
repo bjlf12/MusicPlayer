@@ -1,0 +1,804 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: AlbumsController</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">app.musicplayer.view</a> ]
+</div>
+
+<h1>Coverage Summary for Class: AlbumsController (app.musicplayer.view)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">AlbumsController</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 25)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 263)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">AlbumsController$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 9)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">AlbumsController$2</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 7)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">AlbumsController$3</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 6)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">AlbumsController$4</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 7)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">AlbumsController$5</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 10)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">AlbumsController$6</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 14)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">AlbumsController$7</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 13)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 39)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 329)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package app.musicplayer.view;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import java.net.URL;
+<i>4</i>&nbsp;import java.util.ArrayList;
+<i>5</i>&nbsp;import java.util.Collections;
+<i>6</i>&nbsp;import java.util.ResourceBundle;
+<i>7</i>&nbsp;
+<i>8</i>&nbsp;import app.musicplayer.MusicPlayer;
+<i>9</i>&nbsp;import app.musicplayer.model.Album;
+<i>10</i>&nbsp;import app.musicplayer.model.Library;
+<i>11</i>&nbsp;import app.musicplayer.model.Song;
+<i>12</i>&nbsp;import app.musicplayer.util.ClippedTableCell;
+<i>13</i>&nbsp;import app.musicplayer.util.ControlPanelTableCell;
+<i>14</i>&nbsp;import app.musicplayer.util.PlayingTableCell;
+<i>15</i>&nbsp;import app.musicplayer.util.SubView;
+<i>16</i>&nbsp;import javafx.animation.Animation;
+<i>17</i>&nbsp;import javafx.animation.Interpolator;
+<i>18</i>&nbsp;import javafx.animation.Transition;
+<i>19</i>&nbsp;import javafx.application.Platform;
+<i>20</i>&nbsp;import javafx.beans.value.ChangeListener;
+<i>21</i>&nbsp;import javafx.collections.FXCollections;
+<i>22</i>&nbsp;import javafx.collections.ObservableList;
+<i>23</i>&nbsp;import javafx.css.PseudoClass;
+<i>24</i>&nbsp;import javafx.event.EventHandler;
+<i>25</i>&nbsp;import javafx.fxml.FXML;
+<i>26</i>&nbsp;import javafx.fxml.Initializable;
+<i>27</i>&nbsp;import javafx.geometry.Insets;
+<i>28</i>&nbsp;import javafx.geometry.Pos;
+<i>29</i>&nbsp;import javafx.geometry.Rectangle2D;
+<i>30</i>&nbsp;import javafx.scene.Node;
+<i>31</i>&nbsp;import javafx.scene.control.Label;
+<i>32</i>&nbsp;import javafx.scene.control.OverrunStyle;
+<i>33</i>&nbsp;import javafx.scene.control.ScrollPane;
+<i>34</i>&nbsp;import javafx.scene.control.SelectionMode;
+<i>35</i>&nbsp;import javafx.scene.control.Separator;
+<i>36</i>&nbsp;import javafx.scene.control.TableColumn;
+<i>37</i>&nbsp;import javafx.scene.control.TableRow;
+<i>38</i>&nbsp;import javafx.scene.control.TableView;
+<i>39</i>&nbsp;import javafx.scene.control.TableView.TableViewSelectionModel;
+<i>40</i>&nbsp;import javafx.scene.control.cell.PropertyValueFactory;
+<i>41</i>&nbsp;import javafx.scene.image.ImageView;
+<i>42</i>&nbsp;import javafx.scene.input.ClipboardContent;
+<i>43</i>&nbsp;import javafx.scene.input.Dragboard;
+<i>44</i>&nbsp;import javafx.scene.input.KeyCode;
+<i>45</i>&nbsp;import javafx.scene.input.MouseEvent;
+<i>46</i>&nbsp;import javafx.scene.input.TransferMode;
+<i>47</i>&nbsp;import javafx.scene.layout.FlowPane;
+<i>48</i>&nbsp;import javafx.scene.layout.VBox;
+<i>49</i>&nbsp;import javafx.util.Duration;
+<i>50</i>&nbsp;
+<b class="nc"><i>51</i>&nbsp;public class AlbumsController implements Initializable, SubView {</b>
+<i>52</i>&nbsp;	
+<i>53</i>&nbsp;    @FXML private ScrollPane gridBox;
+<i>54</i>&nbsp;	@FXML private FlowPane grid;
+<i>55</i>&nbsp;    @FXML private VBox songBox;
+<i>56</i>&nbsp;    @FXML private TableView&lt;Song&gt; songTable;
+<i>57</i>&nbsp;    @FXML private TableColumn&lt;Song, Boolean&gt; playingColumn;
+<i>58</i>&nbsp;    @FXML private TableColumn&lt;Song, String&gt; titleColumn;
+<i>59</i>&nbsp;    @FXML private TableColumn&lt;Song, String&gt; lengthColumn;
+<i>60</i>&nbsp;    @FXML private TableColumn&lt;Song, Integer&gt; playsColumn;
+<i>61</i>&nbsp;    @FXML private Label artistLabel;
+<i>62</i>&nbsp;    @FXML private Label albumLabel;
+<i>63</i>&nbsp;    @FXML private Separator horizontalSeparator;
+<i>64</i>&nbsp;    @FXML private Separator verticalSeparator;
+<i>65</i>&nbsp;    
+<b class="nc"><i>66</i>&nbsp;    private boolean isAlbumDetailCollapsed = true;</b>
+<i>67</i>&nbsp;    
+<i>68</i>&nbsp;    // Initializes values used for animations.
+<b class="nc"><i>69</i>&nbsp;    private double expandedHeight = 400;</b>
+<b class="nc"><i>70</i>&nbsp;    private double collapsedHeight = 0;</b>
+<i>71</i>&nbsp;    
+<i>72</i>&nbsp;    // Initializes the index for the currently selected cell.
+<i>73</i>&nbsp;    private int currentCell;
+<i>74</i>&nbsp;    
+<i>75</i>&nbsp;    // Initializes the value of the x-coordinate for the currently selected cell.
+<i>76</i>&nbsp;    private double currentCellYCoordinate;
+<i>77</i>&nbsp;    
+<i>78</i>&nbsp;    private Song selectedSong;
+<i>79</i>&nbsp;    
+<i>80</i>&nbsp;	@Override
+<i>81</i>&nbsp;	public void initialize(URL location, ResourceBundle resources) {
+<i>82</i>&nbsp;		
+<b class="nc"><i>83</i>&nbsp;		songTable.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);</b>
+<i>84</i>&nbsp;		
+<b class="nc"><i>85</i>&nbsp;		ObservableList&lt;Album&gt; albums = Library.getAlbums();</b>
+<b class="nc"><i>86</i>&nbsp;		Collections.sort(albums);</b>
+<i>87</i>&nbsp;
+<b class="nc"><i>88</i>&nbsp;        int limit = (albums.size() &lt; 25) ? albums.size() : 25;</b>
+<i>89</i>&nbsp;
+<b class="nc"><i>90</i>&nbsp;		for (int i = 0; i &lt; limit; i++) {</b>
+<i>91</i>&nbsp;
+<b class="nc"><i>92</i>&nbsp;            Album album = albums.get(i);</b>
+<b class="nc"><i>93</i>&nbsp;            grid.getChildren().add(createCell(album, i));</b>
+<i>94</i>&nbsp;		}
+<i>95</i>&nbsp;
+<b class="nc"><i>96</i>&nbsp;        int rows = (albums.size() % 5 == 0) ? albums.size() / 5 : albums.size() / 5 + 1;</b>
+<i>97</i>&nbsp;        
+<i>98</i>&nbsp;        // Sets the height and width of the grid to fill the screen.
+<b class="nc"><i>99</i>&nbsp;        grid.prefHeightProperty().bind(gridBox.widthProperty().divide(5).add(16).multiply(rows));</b>
+<b class="nc"><i>100</i>&nbsp;        grid.prefWidthProperty().bind(gridBox.widthProperty());</b>
+<i>101</i>&nbsp;        
+<i>102</i>&nbsp;		// Sets the song table to be invisible when the view is initialized.
+<b class="nc"><i>103</i>&nbsp;        songBox.setVisible(false);</b>
+<i>104</i>&nbsp;        
+<b class="nc"><i>105</i>&nbsp;        gridBox.heightProperty().addListener((obs, oldValue, newValue) -&gt; {</b>
+<b class="nc"><i>106</i>&nbsp;        	expandedHeight = newValue.doubleValue() / 2.0;</b>
+<b class="nc"><i>107</i>&nbsp;        	if (!isAlbumDetailCollapsed) {</b>
+<b class="nc"><i>108</i>&nbsp;        		songBox.setPrefHeight(expandedHeight);</b>
+<i>109</i>&nbsp;        	}
+<b class="nc"><i>110</i>&nbsp;        });</b>
+<i>111</i>&nbsp;
+<b class="nc"><i>112</i>&nbsp;        new Thread(() -&gt; {</b>
+<i>113</i>&nbsp;
+<i>114</i>&nbsp;        	try {
+<b class="nc"><i>115</i>&nbsp;        		Thread.sleep(1000);</b>
+<b class="nc"><i>116</i>&nbsp;        	} catch (Exception ex) {</b>
+<b class="nc"><i>117</i>&nbsp;        		ex.printStackTrace();</b>
+<b class="nc"><i>118</i>&nbsp;        	}</b>
+<i>119</i>&nbsp;        	
+<b class="nc"><i>120</i>&nbsp;            for (int j = 25; j &lt; albums.size(); j++) {</b>
+<b class="nc"><i>121</i>&nbsp;            	Album album = albums.get(j);</b>
+<b class="nc"><i>122</i>&nbsp;                int k = j;</b>
+<b class="nc"><i>123</i>&nbsp;                Platform.runLater(() -&gt; {</b>
+<b class="nc"><i>124</i>&nbsp;                    grid.getChildren().add(createCell(album, k));</b>
+<b class="nc"><i>125</i>&nbsp;                });</b>
+<i>126</i>&nbsp;            }
+<b class="nc"><i>127</i>&nbsp;        }).start();</b>
+<i>128</i>&nbsp;        
+<i>129</i>&nbsp;        // Sets preferred column width.
+<b class="nc"><i>130</i>&nbsp;        titleColumn.prefWidthProperty().bind(songTable.widthProperty().subtract(50).multiply(0.5));</b>
+<b class="nc"><i>131</i>&nbsp;        lengthColumn.prefWidthProperty().bind(songTable.widthProperty().subtract(50).multiply(0.25));</b>
+<b class="nc"><i>132</i>&nbsp;        playsColumn.prefWidthProperty().bind(songTable.widthProperty().subtract(50).multiply(0.25));</b>
+<i>133</i>&nbsp;        
+<b class="nc"><i>134</i>&nbsp;        songTable.addEventFilter(MouseEvent.MOUSE_PRESSED, event -&gt; {</b>
+<b class="nc"><i>135</i>&nbsp;        	songTable.requestFocus();</b>
+<b class="nc"><i>136</i>&nbsp;        	event.consume();</b>
+<b class="nc"><i>137</i>&nbsp;        });</b>
+<i>138</i>&nbsp;        
+<i>139</i>&nbsp;        // Sets the playing properties for the songs in the song table.
+<b class="nc"><i>140</i>&nbsp;        songTable.setRowFactory(x -&gt; {</b>
+<b class="nc"><i>141</i>&nbsp;            TableRow&lt;Song&gt; row = new TableRow&lt;Song&gt;();</b>
+<i>142</i>&nbsp;
+<b class="nc"><i>143</i>&nbsp;            PseudoClass playing = PseudoClass.getPseudoClass(&quot;playing&quot;);</b>
+<i>144</i>&nbsp;
+<b class="nc"><i>145</i>&nbsp;            ChangeListener&lt;Boolean&gt; changeListener = (obs, oldValue, newValue) -&gt; {</b>
+<b class="nc"><i>146</i>&nbsp;                row.pseudoClassStateChanged(playing, newValue.booleanValue());</b>
+<b class="nc"><i>147</i>&nbsp;            };</b>
+<i>148</i>&nbsp;
+<b class="nc"><i>149</i>&nbsp;            row.itemProperty().addListener((obs, previousSong, currentSong) -&gt; {</b>
+<b class="nc"><i>150</i>&nbsp;            	if (previousSong != null) {</b>
+<b class="nc"><i>151</i>&nbsp;            		previousSong.playingProperty().removeListener(changeListener);</b>
+<i>152</i>&nbsp;            	}
+<b class="nc"><i>153</i>&nbsp;            	if (currentSong != null) {</b>
+<b class="nc"><i>154</i>&nbsp;                    currentSong.playingProperty().addListener(changeListener);</b>
+<b class="nc"><i>155</i>&nbsp;                    row.pseudoClassStateChanged(playing, currentSong.getPlaying());</b>
+<i>156</i>&nbsp;                } else {
+<b class="nc"><i>157</i>&nbsp;                    row.pseudoClassStateChanged(playing, false);</b>
+<i>158</i>&nbsp;                }
+<b class="nc"><i>159</i>&nbsp;            });</b>
+<i>160</i>&nbsp;
+<b class="nc"><i>161</i>&nbsp;            row.setOnMouseClicked(event -&gt; {</b>
+<b class="nc"><i>162</i>&nbsp;            	TableViewSelectionModel&lt;Song&gt; sm = songTable.getSelectionModel();</b>
+<b class="nc"><i>163</i>&nbsp;                if (event.getClickCount() == 2 &amp;&amp; !row.isEmpty()) {</b>
+<b class="nc"><i>164</i>&nbsp;                    play();</b>
+<b class="nc"><i>165</i>&nbsp;                } else if (event.isShiftDown()) {</b>
+<b class="nc"><i>166</i>&nbsp;                	ArrayList&lt;Integer&gt; indices = new ArrayList&lt;Integer&gt;(sm.getSelectedIndices());</b>
+<b class="nc"><i>167</i>&nbsp;                	if (indices.size() &lt; 1) {</b>
+<b class="nc"><i>168</i>&nbsp;                		if (indices.contains(row.getIndex())) {</b>
+<b class="nc"><i>169</i>&nbsp;                    		sm.clearSelection(row.getIndex());</b>
+<i>170</i>&nbsp;                    	} else {
+<b class="nc"><i>171</i>&nbsp;                    		sm.select(row.getItem());</b>
+<i>172</i>&nbsp;                    	}
+<i>173</i>&nbsp;                	} else {
+<b class="nc"><i>174</i>&nbsp;                		sm.clearSelection();</b>
+<b class="nc"><i>175</i>&nbsp;	                	indices.sort((first, second) -&gt; first.compareTo(second));</b>
+<b class="nc"><i>176</i>&nbsp;	                	int max = indices.get(indices.size() - 1);</b>
+<b class="nc"><i>177</i>&nbsp;	                	int min = indices.get(0);</b>
+<b class="nc"><i>178</i>&nbsp;	                	if (min &lt; row.getIndex()) {</b>
+<b class="nc"><i>179</i>&nbsp;	                		for (int i = min; i &lt;= row.getIndex(); i++) {</b>
+<b class="nc"><i>180</i>&nbsp;	                			sm.select(i);</b>
+<i>181</i>&nbsp;	                		}
+<i>182</i>&nbsp;	                	} else {
+<b class="nc"><i>183</i>&nbsp;	                		for (int i = row.getIndex(); i &lt;= max; i++) {</b>
+<b class="nc"><i>184</i>&nbsp;	                			sm.select(i);</b>
+<i>185</i>&nbsp;	                		}
+<i>186</i>&nbsp;	                	}
+<i>187</i>&nbsp;                	}
+<i>188</i>&nbsp;                	
+<b class="nc"><i>189</i>&nbsp;                } else if (event.isControlDown()) {</b>
+<b class="nc"><i>190</i>&nbsp;                	if (sm.getSelectedIndices().contains(row.getIndex())) {</b>
+<b class="nc"><i>191</i>&nbsp;                		sm.clearSelection(row.getIndex());</b>
+<i>192</i>&nbsp;                	} else {
+<b class="nc"><i>193</i>&nbsp;                		sm.select(row.getItem());</b>
+<i>194</i>&nbsp;                	}
+<i>195</i>&nbsp;                } else {
+<b class="nc"><i>196</i>&nbsp;                	if (sm.getSelectedIndices().size() &gt; 1) {</b>
+<b class="nc"><i>197</i>&nbsp;                		sm.clearSelection();</b>
+<b class="nc"><i>198</i>&nbsp;                    	sm.select(row.getItem());</b>
+<b class="nc"><i>199</i>&nbsp;                	} else if (sm.getSelectedIndices().contains(row.getIndex())) {</b>
+<b class="nc"><i>200</i>&nbsp;                		sm.clearSelection();</b>
+<i>201</i>&nbsp;                	} else {
+<b class="nc"><i>202</i>&nbsp;                		sm.clearSelection();</b>
+<b class="nc"><i>203</i>&nbsp;                    	sm.select(row.getItem());</b>
+<i>204</i>&nbsp;                	}
+<i>205</i>&nbsp;                }
+<b class="nc"><i>206</i>&nbsp;            });</b>
+<i>207</i>&nbsp;            
+<b class="nc"><i>208</i>&nbsp;            row.setOnDragDetected(event -&gt; {</b>
+<b class="nc"><i>209</i>&nbsp;            	Dragboard db = row.startDragAndDrop(TransferMode.ANY);</b>
+<b class="nc"><i>210</i>&nbsp;            	ClipboardContent content = new ClipboardContent();</b>
+<b class="nc"><i>211</i>&nbsp;            	if (songTable.getSelectionModel().getSelectedIndices().size() &gt; 1) {</b>
+<b class="nc"><i>212</i>&nbsp;            		content.putString(&quot;List&quot;);</b>
+<b class="nc"><i>213</i>&nbsp;                    db.setContent(content);</b>
+<b class="nc"><i>214</i>&nbsp;                	MusicPlayer.setDraggedItem(songTable.getSelectionModel().getSelectedItems());</b>
+<i>215</i>&nbsp;            	} else {
+<b class="nc"><i>216</i>&nbsp;            		content.putString(&quot;Song&quot;);</b>
+<b class="nc"><i>217</i>&nbsp;                    db.setContent(content);</b>
+<b class="nc"><i>218</i>&nbsp;                	MusicPlayer.setDraggedItem(row.getItem());</b>
+<i>219</i>&nbsp;            	}
+<b class="nc"><i>220</i>&nbsp;            	ImageView image = new ImageView(row.snapshot(null, null));</b>
+<b class="nc"><i>221</i>&nbsp;            	Rectangle2D rectangle = new Rectangle2D(0, 0, 250, 50);</b>
+<b class="nc"><i>222</i>&nbsp;            	image.setViewport(rectangle);</b>
+<b class="nc"><i>223</i>&nbsp;            	db.setDragView(image.snapshot(null, null), 125, 25);</b>
+<b class="nc"><i>224</i>&nbsp;                event.consume();</b>
+<b class="nc"><i>225</i>&nbsp;            });</b>
+<b class="nc"><i>226</i>&nbsp;            return row ;</b>
+<i>227</i>&nbsp;        });
+<i>228</i>&nbsp;        
+<b class="nc"><i>229</i>&nbsp;        songTable.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -&gt; {</b>
+<b class="nc"><i>230</i>&nbsp;        	if (oldSelection != null) {</b>
+<b class="nc"><i>231</i>&nbsp;        		oldSelection.setSelected(false);</b>
+<i>232</i>&nbsp;        	}
+<b class="nc"><i>233</i>&nbsp;        	if (newSelection != null &amp;&amp; songTable.getSelectionModel().getSelectedIndices().size() == 1) {</b>
+<b class="nc"><i>234</i>&nbsp;        		newSelection.setSelected(true);</b>
+<b class="nc"><i>235</i>&nbsp;        		selectedSong = newSelection;</b>
+<i>236</i>&nbsp;        	}
+<b class="nc"><i>237</i>&nbsp;        });</b>
+<i>238</i>&nbsp;        
+<i>239</i>&nbsp;        // Plays selected song when enter key is pressed.
+<b class="nc"><i>240</i>&nbsp;        songTable.setOnKeyPressed(event -&gt; {</b>
+<b class="nc"><i>241</i>&nbsp;        	if (event.getCode().equals(KeyCode.ENTER)) {</b>
+<b class="nc"><i>242</i>&nbsp;        		play();</b>
+<i>243</i>&nbsp;        	}
+<b class="nc"><i>244</i>&nbsp;        });</b>
+<i>245</i>&nbsp;
+<b class="nc"><i>246</i>&nbsp;        horizontalSeparator.setOnMouseDragged(new EventHandler&lt;MouseEvent&gt;() {</b>
+<i>247</i>&nbsp;            @Override public void handle(MouseEvent e) {
+<i>248</i>&nbsp;            	
+<b class="nc"><i>249</i>&nbsp;            	expandedHeight = MusicPlayer.getStage().getHeight() - e.getSceneY() - 75;</b>
+<i>250</i>&nbsp;            	
+<b class="nc"><i>251</i>&nbsp;            	if (expandedHeight &gt; gridBox.getHeight() * 0.75) {	</b>
+<b class="nc"><i>252</i>&nbsp;                	expandedHeight = gridBox.getHeight() * 0.75;</b>
+<b class="nc"><i>253</i>&nbsp;                } else if (expandedHeight &lt; gridBox.getHeight() * 0.25) {</b>
+<b class="nc"><i>254</i>&nbsp;                	expandedHeight = gridBox.getHeight() * 0.25;</b>
+<i>255</i>&nbsp;                }
+<i>256</i>&nbsp;            	
+<b class="nc"><i>257</i>&nbsp;            	songBox.setPrefHeight(expandedHeight);</b>
+<b class="nc"><i>258</i>&nbsp;                e.consume();</b>
+<b class="nc"><i>259</i>&nbsp;            }</b>
+<i>260</i>&nbsp;        });
+<b class="nc"><i>261</i>&nbsp;	}</b>
+<i>262</i>&nbsp;	
+<i>263</i>&nbsp;    private VBox createCell(Album album, int index) {
+<i>264</i>&nbsp;
+<b class="nc"><i>265</i>&nbsp;        VBox cell = new VBox();</b>
+<b class="nc"><i>266</i>&nbsp;        Label title = new Label(album.getTitle());</b>
+<b class="nc"><i>267</i>&nbsp;        ImageView image = new ImageView(album.getArtwork());</b>
+<b class="nc"><i>268</i>&nbsp;        image.imageProperty().bind(album.artworkProperty());</b>
+<b class="nc"><i>269</i>&nbsp;        VBox imageBox = new VBox();</b>
+<i>270</i>&nbsp;
+<b class="nc"><i>271</i>&nbsp;        title.setTextOverrun(OverrunStyle.CLIP);</b>
+<b class="nc"><i>272</i>&nbsp;        title.setWrapText(true);</b>
+<b class="nc"><i>273</i>&nbsp;        title.setPadding(new Insets(10, 0, 10, 0));</b>
+<b class="nc"><i>274</i>&nbsp;        title.setAlignment(Pos.TOP_LEFT);</b>
+<b class="nc"><i>275</i>&nbsp;        title.setPrefHeight(66);</b>
+<b class="nc"><i>276</i>&nbsp;        title.prefWidthProperty().bind(grid.widthProperty().subtract(100).divide(5).subtract(1));</b>
+<i>277</i>&nbsp;
+<b class="nc"><i>278</i>&nbsp;        image.fitWidthProperty().bind(grid.widthProperty().subtract(100).divide(5).subtract(1));</b>
+<b class="nc"><i>279</i>&nbsp;        image.fitHeightProperty().bind(grid.widthProperty().subtract(100).divide(5).subtract(1));</b>
+<b class="nc"><i>280</i>&nbsp;        image.setPreserveRatio(true);</b>
+<b class="nc"><i>281</i>&nbsp;        image.setSmooth(true);</b>
+<i>282</i>&nbsp;
+<b class="nc"><i>283</i>&nbsp;        imageBox.prefWidthProperty().bind(grid.widthProperty().subtract(100).divide(5).subtract(1));</b>
+<b class="nc"><i>284</i>&nbsp;        imageBox.prefHeightProperty().bind(grid.widthProperty().subtract(100).divide(5).subtract(1));</b>
+<b class="nc"><i>285</i>&nbsp;        imageBox.setAlignment(Pos.CENTER);</b>
+<b class="nc"><i>286</i>&nbsp;        imageBox.getChildren().add(image);</b>
+<i>287</i>&nbsp;
+<b class="nc"><i>288</i>&nbsp;        cell.getChildren().addAll(imageBox, title);</b>
+<b class="nc"><i>289</i>&nbsp;        cell.setPadding(new Insets(10, 10, 10, 10));</b>
+<b class="nc"><i>290</i>&nbsp;        cell.getStyleClass().add(&quot;album-cell&quot;);</b>
+<b class="nc"><i>291</i>&nbsp;        cell.setAlignment(Pos.CENTER);</b>
+<b class="nc"><i>292</i>&nbsp;        cell.setOnMouseClicked(event -&gt; {</b>
+<i>293</i>&nbsp;        	
+<b class="nc"><i>294</i>&nbsp;        	PseudoClass selected = PseudoClass.getPseudoClass(&quot;selected&quot;);</b>
+<i>295</i>&nbsp;        	
+<i>296</i>&nbsp;        	// If the album detail is collapsed, expand it and populate song table.
+<b class="nc"><i>297</i>&nbsp;        	if (isAlbumDetailCollapsed) {</b>
+<i>298</i>&nbsp;        		
+<b class="nc"><i>299</i>&nbsp;        		cell.pseudoClassStateChanged(selected, true);</b>
+<i>300</i>&nbsp;        		
+<i>301</i>&nbsp;            	// Updates the index of the currently selected cell.
+<b class="nc"><i>302</i>&nbsp;            	currentCell = index;</b>
+<i>303</i>&nbsp;            	
+<i>304</i>&nbsp;        		// Shows song table, plays load animation and populates song table with album songs.
+<b class="nc"><i>305</i>&nbsp;        		expandAlbumDetail();</b>
+<b class="nc"><i>306</i>&nbsp;        		expandAnimation.play();</b>
+<i>307</i>&nbsp;        		
+<b class="nc"><i>308</i>&nbsp;        		artistLabel.setText(album.getArtist());</b>
+<b class="nc"><i>309</i>&nbsp;        		albumLabel.setText(album.getTitle());</b>
+<b class="nc"><i>310</i>&nbsp;        		populateSongTable(cell, album);</b>
+<i>311</i>&nbsp;        		
+<i>312</i>&nbsp;        		// Else if album detail is expanded and opened album is reselected.
+<b class="nc"><i>313</i>&nbsp;        	} else if (!isAlbumDetailCollapsed &amp;&amp; index == currentCell) {</b>
+<i>314</i>&nbsp;        		
+<b class="nc"><i>315</i>&nbsp;        		cell.pseudoClassStateChanged(selected, false);</b>
+<i>316</i>&nbsp;        		
+<i>317</i>&nbsp;        		// Plays the collapse animation to remove the song table.
+<b class="nc"><i>318</i>&nbsp;        		collapseAnimation.play();</b>
+<i>319</i>&nbsp;        		
+<i>320</i>&nbsp;        		// Else if album detail is expanded and a different album is selected on the same row.
+<b class="nc"><i>321</i>&nbsp;        	} else if (!isAlbumDetailCollapsed &amp;&amp; !(index == currentCell)</b>
+<b class="nc"><i>322</i>&nbsp;        			&amp;&amp; currentCellYCoordinate == cell.getBoundsInParent().getMaxY()) {</b>
+<i>323</i>&nbsp;        		
+<b class="nc"><i>324</i>&nbsp;        		for (Node child : grid.getChildren()) {</b>
+<b class="nc"><i>325</i>&nbsp;        			child.pseudoClassStateChanged(selected, false);</b>
+<b class="nc"><i>326</i>&nbsp;        		}</b>
+<b class="nc"><i>327</i>&nbsp;        		cell.pseudoClassStateChanged(selected, true);</b>
+<i>328</i>&nbsp;        		
+<i>329</i>&nbsp;            	// Updates the index of the currently selected cell.
+<b class="nc"><i>330</i>&nbsp;            	currentCell = index;</b>
+<i>331</i>&nbsp;            	
+<i>332</i>&nbsp;            	// Plays load animation and populates song table with songs of newly selected album.
+<b class="nc"><i>333</i>&nbsp;            	tableCollapseAnimation.setOnFinished(x -&gt; {</b>
+<b class="nc"><i>334</i>&nbsp;            		artistLabel.setText(album.getArtist());</b>
+<b class="nc"><i>335</i>&nbsp;            		albumLabel.setText(album.getTitle());</b>
+<b class="nc"><i>336</i>&nbsp;            		populateSongTable(cell, album);</b>
+<b class="nc"><i>337</i>&nbsp;            		expandAlbumDetail();</b>
+<b class="nc"><i>338</i>&nbsp;            		tableExpandAnimation.play();</b>
+<b class="nc"><i>339</i>&nbsp;            		tableCollapseAnimation.setOnFinished(y -&gt; collapseAlbumDetail());</b>
+<b class="nc"><i>340</i>&nbsp;            	});</b>
+<i>341</i>&nbsp;            	
+<b class="nc"><i>342</i>&nbsp;            	tableCollapseAnimation.play();</b>
+<i>343</i>&nbsp;        		
+<i>344</i>&nbsp;        		// Else if album detail is expanded and a different album is selected on a different row.
+<b class="nc"><i>345</i>&nbsp;        	} else if (!isAlbumDetailCollapsed &amp;&amp; !(index == currentCell)</b>
+<b class="nc"><i>346</i>&nbsp;        			&amp;&amp; !(currentCellYCoordinate == cell.getBoundsInParent().getMaxY())) {</b>
+<i>347</i>&nbsp;        		
+<b class="nc"><i>348</i>&nbsp;        		for (Node child : grid.getChildren()) {</b>
+<b class="nc"><i>349</i>&nbsp;        			child.pseudoClassStateChanged(selected, false);</b>
+<b class="nc"><i>350</i>&nbsp;        		}</b>
+<b class="nc"><i>351</i>&nbsp;        		cell.pseudoClassStateChanged(selected, true);</b>
+<i>352</i>&nbsp;        		
+<i>353</i>&nbsp;            	// Updates the index of the currently selected cell.
+<b class="nc"><i>354</i>&nbsp;            	currentCell = index;</b>
+<i>355</i>&nbsp;            	
+<i>356</i>&nbsp;            	// Collapses the song table and then expands it in the appropriate row with songs on new album.
+<b class="nc"><i>357</i>&nbsp;            	collapseAlbumDetail();</b>
+<b class="nc"><i>358</i>&nbsp;        		expandAlbumDetail();</b>
+<i>359</i>&nbsp;        		// Plays load animation and populates song table with songs of newly selected album.
+<b class="nc"><i>360</i>&nbsp;        		tableCollapseAnimation.setOnFinished(x -&gt; {</b>
+<b class="nc"><i>361</i>&nbsp;        			artistLabel.setText(album.getArtist());</b>
+<b class="nc"><i>362</i>&nbsp;            		albumLabel.setText(album.getTitle());</b>
+<b class="nc"><i>363</i>&nbsp;            		populateSongTable(cell, album);</b>
+<b class="nc"><i>364</i>&nbsp;            		expandAlbumDetail();</b>
+<b class="nc"><i>365</i>&nbsp;            		tableExpandAnimation.play();</b>
+<b class="nc"><i>366</i>&nbsp;            		tableCollapseAnimation.setOnFinished(y -&gt; collapseAlbumDetail());</b>
+<b class="nc"><i>367</i>&nbsp;            	});</b>
+<i>368</i>&nbsp;            	
+<b class="nc"><i>369</i>&nbsp;            	tableCollapseAnimation.play();</b>
+<i>370</i>&nbsp;        		
+<i>371</i>&nbsp;        	} else {
+<i>372</i>&nbsp;        		
+<b class="nc"><i>373</i>&nbsp;        		for (Node child : grid.getChildren()) {</b>
+<b class="nc"><i>374</i>&nbsp;        			child.pseudoClassStateChanged(selected, false);</b>
+<b class="nc"><i>375</i>&nbsp;        		}</b>
+<i>376</i>&nbsp;        		
+<i>377</i>&nbsp;        		// Plays the collapse animation to remove the song table.
+<b class="nc"><i>378</i>&nbsp;        		collapseAnimation.play();</b>
+<i>379</i>&nbsp;        	}
+<i>380</i>&nbsp;        	// Sets the cells max x value as the current cell x coordinate.
+<b class="nc"><i>381</i>&nbsp;        	currentCellYCoordinate = cell.getBoundsInParent().getMaxY();</b>
+<b class="nc"><i>382</i>&nbsp;        });</b>
+<i>383</i>&nbsp;        
+<b class="nc"><i>384</i>&nbsp;        cell.setOnDragDetected(event -&gt; {</b>
+<b class="nc"><i>385</i>&nbsp;        	PseudoClass pressed = PseudoClass.getPseudoClass(&quot;pressed&quot;);</b>
+<b class="nc"><i>386</i>&nbsp;        	cell.pseudoClassStateChanged(pressed, false);</b>
+<b class="nc"><i>387</i>&nbsp;        	Dragboard db = cell.startDragAndDrop(TransferMode.ANY);</b>
+<b class="nc"><i>388</i>&nbsp;        	ClipboardContent content = new ClipboardContent();</b>
+<b class="nc"><i>389</i>&nbsp;            content.putString(&quot;Album&quot;);</b>
+<b class="nc"><i>390</i>&nbsp;            db.setContent(content);</b>
+<b class="nc"><i>391</i>&nbsp;        	MusicPlayer.setDraggedItem(album);</b>
+<b class="nc"><i>392</i>&nbsp;        	db.setDragView(cell.snapshot(null, null), cell.widthProperty().divide(2).get(), cell.heightProperty().divide(2).get());</b>
+<b class="nc"><i>393</i>&nbsp;            event.consume();</b>
+<b class="nc"><i>394</i>&nbsp;        });</b>
+<i>395</i>&nbsp;        
+<b class="nc"><i>396</i>&nbsp;        return cell;</b>
+<i>397</i>&nbsp;    }
+<i>398</i>&nbsp;    
+<i>399</i>&nbsp;    private void expandAlbumDetail() {
+<b class="nc"><i>400</i>&nbsp;    	isAlbumDetailCollapsed = false;</b>
+<b class="nc"><i>401</i>&nbsp;    	songBox.setVisible(true);</b>
+<b class="nc"><i>402</i>&nbsp;    }</b>
+<i>403</i>&nbsp;    
+<i>404</i>&nbsp;    private void collapseAlbumDetail() {
+<b class="nc"><i>405</i>&nbsp;    	isAlbumDetailCollapsed = true;</b>
+<b class="nc"><i>406</i>&nbsp;    	songTable.getItems().clear();</b>
+<b class="nc"><i>407</i>&nbsp;    	songBox.setVisible(false);</b>
+<b class="nc"><i>408</i>&nbsp;    }</b>
+<i>409</i>&nbsp;    
+<i>410</i>&nbsp;    private void populateSongTable(VBox cell, Album selectedAlbum) { 	
+<i>411</i>&nbsp;    	// Retrieves albums songs and stores them as an observable list.
+<b class="nc"><i>412</i>&nbsp;    	ObservableList&lt;Song&gt; albumSongs = FXCollections.observableArrayList(selectedAlbum.getSongs());</b>
+<i>413</i>&nbsp;    	
+<b class="nc"><i>414</i>&nbsp;        playingColumn.setCellFactory(x -&gt; new PlayingTableCell&lt;Song, Boolean&gt;());</b>
+<b class="nc"><i>415</i>&nbsp;        titleColumn.setCellFactory(x -&gt; new ControlPanelTableCell&lt;Song, String&gt;());</b>
+<b class="nc"><i>416</i>&nbsp;        lengthColumn.setCellFactory(x -&gt; new ClippedTableCell&lt;Song, String&gt;());</b>
+<b class="nc"><i>417</i>&nbsp;        playsColumn.setCellFactory(x -&gt; new ClippedTableCell&lt;Song, Integer&gt;());</b>
+<i>418</i>&nbsp;
+<i>419</i>&nbsp;        // Sets each column item.
+<b class="nc"><i>420</i>&nbsp;        playingColumn.setCellValueFactory(new PropertyValueFactory&lt;Song, Boolean&gt;(&quot;playing&quot;));</b>
+<b class="nc"><i>421</i>&nbsp;        titleColumn.setCellValueFactory(new PropertyValueFactory&lt;Song, String&gt;(&quot;title&quot;));</b>
+<b class="nc"><i>422</i>&nbsp;        lengthColumn.setCellValueFactory(new PropertyValueFactory&lt;Song, String&gt;(&quot;length&quot;));</b>
+<b class="nc"><i>423</i>&nbsp;        playsColumn.setCellValueFactory(new PropertyValueFactory&lt;Song, Integer&gt;(&quot;playCount&quot;));</b>
+<i>424</i>&nbsp;        
+<i>425</i>&nbsp;        // Adds songs to table.
+<b class="nc"><i>426</i>&nbsp;        songTable.setItems(albumSongs);</b>
+<b class="nc"><i>427</i>&nbsp;        double height = (albumSongs.size() + 1) * 50 + 2;</b>
+<b class="nc"><i>428</i>&nbsp;        Animation songTableLoadAnimation = new Transition() {</b>
+<i>429</i>&nbsp;        	{
+<b class="nc"><i>430</i>&nbsp;        		setCycleDuration(Duration.millis(250));</b>
+<b class="nc"><i>431</i>&nbsp;                setInterpolator(Interpolator.EASE_BOTH);</b>
+<b class="nc"><i>432</i>&nbsp;        	}</b>
+<i>433</i>&nbsp;        	
+<i>434</i>&nbsp;        	protected void interpolate(double frac) {
+<b class="nc"><i>435</i>&nbsp;        		songTable.setMinHeight(frac * height);</b>
+<b class="nc"><i>436</i>&nbsp;                songTable.setPrefHeight(frac * height);</b>
+<b class="nc"><i>437</i>&nbsp;        	}</b>
+<i>438</i>&nbsp;        };
+<b class="nc"><i>439</i>&nbsp;        songTableLoadAnimation.play();</b>
+<b class="nc"><i>440</i>&nbsp;    }</b>
+<i>441</i>&nbsp;    
+<i>442</i>&nbsp;    @Override
+<i>443</i>&nbsp;    public void play() {
+<i>444</i>&nbsp;    	
+<b class="nc"><i>445</i>&nbsp;    	Song song = selectedSong;</b>
+<b class="nc"><i>446</i>&nbsp;        ObservableList&lt;Song&gt; songList = songTable.getItems();</b>
+<b class="nc"><i>447</i>&nbsp;        if (MusicPlayer.isShuffleActive()) {</b>
+<b class="nc"><i>448</i>&nbsp;        	Collections.shuffle(songList);</b>
+<b class="nc"><i>449</i>&nbsp;        	songList.remove(song);</b>
+<b class="nc"><i>450</i>&nbsp;        	songList.add(0, song);</b>
+<i>451</i>&nbsp;        }
+<b class="nc"><i>452</i>&nbsp;        MusicPlayer.setNowPlayingList(songList);</b>
+<b class="nc"><i>453</i>&nbsp;        MusicPlayer.setNowPlaying(song);</b>
+<b class="nc"><i>454</i>&nbsp;        MusicPlayer.play();</b>
+<b class="nc"><i>455</i>&nbsp;    }</b>
+<i>456</i>&nbsp;    
+<i>457</i>&nbsp;    @Override
+<i>458</i>&nbsp;    public void scroll(char letter) {
+<i>459</i>&nbsp;    	
+<b class="nc"><i>460</i>&nbsp;	    int index = 0;</b>
+<b class="nc"><i>461</i>&nbsp;    	double cellHeight = 0;</b>
+<b class="nc"><i>462</i>&nbsp;    	ObservableList&lt;Node&gt; children = grid.getChildren();</b>
+<i>463</i>&nbsp;    	
+<b class="nc"><i>464</i>&nbsp;    	for (int i = 0; i &lt; children.size(); i++) {</b>
+<i>465</i>&nbsp;    		
+<b class="nc"><i>466</i>&nbsp;    		VBox cell = (VBox) children.get(i);</b>
+<b class="nc"><i>467</i>&nbsp;    		cellHeight = cell.getHeight();</b>
+<b class="nc"><i>468</i>&nbsp;    		if (cell.getChildren().size() &gt; 1) {</b>
+<b class="nc"><i>469</i>&nbsp;    			Label label = (Label) cell.getChildren().get(1);</b>
+<b class="nc"><i>470</i>&nbsp;        		char firstLetter = removeArticle(label.getText()).charAt(0);</b>
+<b class="nc"><i>471</i>&nbsp;        		if (firstLetter &lt; letter) {</b>
+<b class="nc"><i>472</i>&nbsp;        			index++;</b>
+<i>473</i>&nbsp;        		}	
+<i>474</i>&nbsp;    		}
+<i>475</i>&nbsp;    	}
+<i>476</i>&nbsp;    	
+<b class="nc"><i>477</i>&nbsp;    	double row = (index / 5) * cellHeight;</b>
+<b class="nc"><i>478</i>&nbsp;    	double finalVvalue = row / (grid.getHeight() - gridBox.getHeight());</b>
+<b class="nc"><i>479</i>&nbsp;    	double startVvalue = gridBox.getVvalue();</b>
+<i>480</i>&nbsp;    	
+<b class="nc"><i>481</i>&nbsp;    	Animation scrollAnimation = new Transition() {</b>
+<i>482</i>&nbsp;            {
+<b class="nc"><i>483</i>&nbsp;                setCycleDuration(Duration.millis(500));</b>
+<b class="nc"><i>484</i>&nbsp;            }</b>
+<i>485</i>&nbsp;            protected void interpolate(double frac) {
+<b class="nc"><i>486</i>&nbsp;                double vValue = startVvalue + ((finalVvalue - startVvalue) * frac);</b>
+<b class="nc"><i>487</i>&nbsp;                gridBox.setVvalue(vValue);</b>
+<b class="nc"><i>488</i>&nbsp;            }</b>
+<i>489</i>&nbsp;        };
+<i>490</i>&nbsp;        
+<b class="nc"><i>491</i>&nbsp;        scrollAnimation.play();</b>
+<b class="nc"><i>492</i>&nbsp;    }</b>
+<i>493</i>&nbsp;    
+<i>494</i>&nbsp;    private String removeArticle(String title) {
+<i>495</i>&nbsp;
+<b class="nc"><i>496</i>&nbsp;        String arr[] = title.split(&quot; &quot;, 2);</b>
+<i>497</i>&nbsp;
+<b class="nc"><i>498</i>&nbsp;        if (arr.length &lt; 2) {</b>
+<b class="nc"><i>499</i>&nbsp;            return title;</b>
+<i>500</i>&nbsp;        } else {
+<i>501</i>&nbsp;
+<b class="nc"><i>502</i>&nbsp;            String firstWord = arr[0];</b>
+<b class="nc"><i>503</i>&nbsp;            String theRest = arr[1];</b>
+<i>504</i>&nbsp;
+<b class="nc"><i>505</i>&nbsp;            switch (firstWord) {</b>
+<i>506</i>&nbsp;                case &quot;A&quot;:
+<i>507</i>&nbsp;                case &quot;An&quot;:
+<i>508</i>&nbsp;                case &quot;The&quot;:
+<b class="nc"><i>509</i>&nbsp;                    return theRest;</b>
+<i>510</i>&nbsp;                default:
+<b class="nc"><i>511</i>&nbsp;                    return title;</b>
+<i>512</i>&nbsp;            }
+<i>513</i>&nbsp;        }
+<i>514</i>&nbsp;    }
+<i>515</i>&nbsp;    
+<i>516</i>&nbsp;    public Song getSelectedSong() {
+<b class="nc"><i>517</i>&nbsp;    	return selectedSong;</b>
+<i>518</i>&nbsp;    }
+<i>519</i>&nbsp;    
+<i>520</i>&nbsp;    // Animation to display song table when an album is clicked and the song table is collapsed.
+<b class="nc"><i>521</i>&nbsp;    private Animation expandAnimation = new Transition() {</b>
+<i>522</i>&nbsp;        {
+<b class="nc"><i>523</i>&nbsp;            setCycleDuration(Duration.millis(250));</b>
+<b class="nc"><i>524</i>&nbsp;        }</b>
+<i>525</i>&nbsp;        protected void interpolate(double frac) {
+<b class="nc"><i>526</i>&nbsp;        	double curHeight = collapsedHeight + (expandedHeight - collapsedHeight) * (frac);</b>
+<b class="nc"><i>527</i>&nbsp;            songBox.setPrefHeight(curHeight);</b>
+<b class="nc"><i>528</i>&nbsp;            songBox.setOpacity(frac);</b>
+<b class="nc"><i>529</i>&nbsp;        }</b>
+<i>530</i>&nbsp;    };
+<i>531</i>&nbsp;    
+<i>532</i>&nbsp;    // Animation to hide song table when an album is clicked and the song table is expanded.
+<b class="nc"><i>533</i>&nbsp;    private Animation collapseAnimation = new Transition() {</b>
+<i>534</i>&nbsp;        {
+<b class="nc"><i>535</i>&nbsp;            setCycleDuration(Duration.millis(250));</b>
+<b class="nc"><i>536</i>&nbsp;            setOnFinished(x -&gt; collapseAlbumDetail());</b>
+<b class="nc"><i>537</i>&nbsp;        }</b>
+<i>538</i>&nbsp;        protected void interpolate(double frac) {
+<b class="nc"><i>539</i>&nbsp;        	double curHeight = collapsedHeight + (expandedHeight - collapsedHeight) * (1.0 - frac);</b>
+<b class="nc"><i>540</i>&nbsp;            songBox.setPrefHeight(curHeight);</b>
+<b class="nc"><i>541</i>&nbsp;            songBox.setOpacity(1.0 - frac);</b>
+<b class="nc"><i>542</i>&nbsp;            songTable.setMinHeight(1 - frac);</b>
+<b class="nc"><i>543</i>&nbsp;            songTable.setPrefHeight(1 - frac);</b>
+<b class="nc"><i>544</i>&nbsp;        }</b>
+<i>545</i>&nbsp;    };
+<i>546</i>&nbsp;    
+<b class="nc"><i>547</i>&nbsp;    private Animation tableCollapseAnimation = new Transition() {</b>
+<i>548</i>&nbsp;        {
+<b class="nc"><i>549</i>&nbsp;            setCycleDuration(Duration.millis(250));</b>
+<b class="nc"><i>550</i>&nbsp;            setOnFinished(x -&gt; collapseAlbumDetail());</b>
+<b class="nc"><i>551</i>&nbsp;        }</b>
+<i>552</i>&nbsp;        protected void interpolate(double frac) {
+<b class="nc"><i>553</i>&nbsp;        	double curLocation = collapsedHeight + (expandedHeight - collapsedHeight) * (frac);</b>
+<b class="nc"><i>554</i>&nbsp;            artistLabel.setTranslateY(curLocation);</b>
+<b class="nc"><i>555</i>&nbsp;            albumLabel.setTranslateY(curLocation);</b>
+<b class="nc"><i>556</i>&nbsp;            verticalSeparator.setTranslateY(curLocation);</b>
+<b class="nc"><i>557</i>&nbsp;        	songTable.setTranslateY(curLocation);</b>
+<b class="nc"><i>558</i>&nbsp;        	artistLabel.setOpacity(1.0 - frac);</b>
+<b class="nc"><i>559</i>&nbsp;            albumLabel.setOpacity(1.0 - frac);</b>
+<b class="nc"><i>560</i>&nbsp;            verticalSeparator.setOpacity(1.0 - frac);</b>
+<b class="nc"><i>561</i>&nbsp;        	songTable.setOpacity(1.0 - frac);</b>
+<b class="nc"><i>562</i>&nbsp;        }</b>
+<i>563</i>&nbsp;    };
+<i>564</i>&nbsp;
+<b class="nc"><i>565</i>&nbsp;    private Animation tableExpandAnimation = new Transition() {</b>
+<i>566</i>&nbsp;        {
+<b class="nc"><i>567</i>&nbsp;            setCycleDuration(Duration.millis(250));</b>
+<b class="nc"><i>568</i>&nbsp;        }</b>
+<i>569</i>&nbsp;        protected void interpolate(double frac) {
+<b class="nc"><i>570</i>&nbsp;        	double curLocation = collapsedHeight + (expandedHeight - collapsedHeight) * (1.0 - frac);</b>
+<b class="nc"><i>571</i>&nbsp;        	artistLabel.setTranslateY(curLocation);</b>
+<b class="nc"><i>572</i>&nbsp;            albumLabel.setTranslateY(curLocation);</b>
+<b class="nc"><i>573</i>&nbsp;            verticalSeparator.setTranslateY(curLocation);</b>
+<b class="nc"><i>574</i>&nbsp;            songTable.setTranslateY(curLocation);</b>
+<b class="nc"><i>575</i>&nbsp;            artistLabel.setOpacity(frac);</b>
+<b class="nc"><i>576</i>&nbsp;            albumLabel.setOpacity(frac);</b>
+<b class="nc"><i>577</i>&nbsp;            verticalSeparator.setOpacity(frac);</b>
+<b class="nc"><i>578</i>&nbsp;        	songTable.setOpacity(frac);</b>
+<b class="nc"><i>579</i>&nbsp;        }</b>
+<i>580</i>&nbsp;    };
+<i>581</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2020-12-15 20:05</div>
+</div>
+</body>
+</html>

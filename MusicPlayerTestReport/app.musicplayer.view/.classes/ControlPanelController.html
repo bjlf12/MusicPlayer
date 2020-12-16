@@ -1,0 +1,229 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: ControlPanelController</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">app.musicplayer.view</a> ]
+</div>
+
+<h1>Coverage Summary for Class: ControlPanelController (app.musicplayer.view)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">ControlPanelController</td>
+<td class="coverageStat">
+  <span class="percent">
+    71,4%
+  </span>
+  <span class="absValue">
+    (5/ 7)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    87,2%
+  </span>
+  <span class="absValue">
+    (41/ 47)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">ControlPanelController$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (6/ 6)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    77,8%
+  </span>
+  <span class="absValue">
+    (7/ 9)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    88,7%
+  </span>
+  <span class="absValue">
+    (47/ 53)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package app.musicplayer.view;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import java.net.URL;
+<i>4</i>&nbsp;import java.util.ResourceBundle;
+<i>5</i>&nbsp;
+<i>6</i>&nbsp;import app.musicplayer.MusicPlayer;
+<i>7</i>&nbsp;import app.musicplayer.model.Library;
+<i>8</i>&nbsp;import app.musicplayer.model.Playlist;
+<i>9</i>&nbsp;import app.musicplayer.model.Song;
+<i>10</i>&nbsp;import app.musicplayer.util.SubView;
+<i>11</i>&nbsp;import javafx.animation.Animation;
+<i>12</i>&nbsp;import javafx.animation.Interpolator;
+<i>13</i>&nbsp;import javafx.animation.Transition;
+<i>14</i>&nbsp;import javafx.collections.FXCollections;
+<i>15</i>&nbsp;import javafx.collections.ObservableList;
+<i>16</i>&nbsp;import javafx.event.Event;
+<i>17</i>&nbsp;import javafx.fxml.FXML;
+<i>18</i>&nbsp;import javafx.fxml.Initializable;
+<i>19</i>&nbsp;import javafx.scene.control.ContextMenu;
+<i>20</i>&nbsp;import javafx.scene.control.MenuItem;
+<i>21</i>&nbsp;import javafx.scene.control.SeparatorMenuItem;
+<i>22</i>&nbsp;import javafx.scene.input.MouseEvent;
+<i>23</i>&nbsp;import javafx.scene.layout.Pane;
+<i>24</i>&nbsp;import javafx.util.Duration;
+<i>25</i>&nbsp;
+<b class="fc"><i>26</i>&nbsp;public class ControlPanelController implements Initializable {</b>
+<i>27</i>&nbsp;
+<i>28</i>&nbsp;	@FXML private Pane playButton;
+<i>29</i>&nbsp;	@FXML private Pane playlistButton;
+<i>30</i>&nbsp;
+<i>31</i>&nbsp;	private ContextMenu contextMenu;
+<i>32</i>&nbsp;
+<b class="fc"><i>33</i>&nbsp;	private Animation showMenuAnimation = new Transition() {</b>
+<i>34</i>&nbsp;		{
+<b class="fc"><i>35</i>&nbsp;			setCycleDuration(Duration.millis(250));</b>
+<b class="fc"><i>36</i>&nbsp;			setInterpolator(Interpolator.EASE_BOTH);</b>
+<b class="fc"><i>37</i>&nbsp;		}</b>
+<i>38</i>&nbsp;		protected void interpolate(double frac) {
+<b class="fc"><i>39</i>&nbsp;			contextMenu.setOpacity(frac);</b>
+<b class="fc"><i>40</i>&nbsp;		}</b>
+<i>41</i>&nbsp;	};
+<i>42</i>&nbsp;
+<i>43</i>&nbsp;	@Override
+<b class="fc"><i>44</i>&nbsp;	public void initialize(URL location, ResourceBundle resources) {}</b>
+<i>45</i>&nbsp;
+<i>46</i>&nbsp;	@FXML
+<i>47</i>&nbsp;	private void playSong(Event e) {
+<b class="nc"><i>48</i>&nbsp;		SubView controller = MusicPlayer.getMainController().getSubViewController();</b>
+<b class="nc"><i>49</i>&nbsp;		controller.play();</b>
+<b class="nc"><i>50</i>&nbsp;		e.consume();</b>
+<b class="nc"><i>51</i>&nbsp;	}</b>
+<i>52</i>&nbsp;
+<i>53</i>&nbsp;	@FXML
+<i>54</i>&nbsp;	private void addToPlaylist(Event e) {
+<i>55</i>&nbsp;		// Gets the mouse event coordinates in the screen to display the context menu in this location.
+<b class="fc"><i>56</i>&nbsp;		MouseEvent mouseEvent = (MouseEvent) e;</b>
+<b class="fc"><i>57</i>&nbsp;		double x = mouseEvent.getScreenX();</b>
+<b class="fc"><i>58</i>&nbsp;		double y = mouseEvent.getScreenY();</b>
+<i>59</i>&nbsp;
+<i>60</i>&nbsp;		// Retrieves the selected song to add to the desired playlist.
+<b class="fc"><i>61</i>&nbsp;		Song selectedSong = MusicPlayer.getMainController().getSubViewController().getSelectedSong();</b>
+<i>62</i>&nbsp;
+<b class="fc"><i>63</i>&nbsp;		ObservableList&lt;Playlist&gt; playlists = Library.getPlaylists();</b>
+<i>64</i>&nbsp;
+<i>65</i>&nbsp;		// Retrieves all the playlist titles to create menu items.
+<b class="fc"><i>66</i>&nbsp;		ObservableList&lt;String&gt; playlistTitles = FXCollections.observableArrayList();</b>
+<b class="fc"><i>67</i>&nbsp;		for (Playlist playlist : playlists) {</b>
+<b class="fc"><i>68</i>&nbsp;			String title = playlist.getTitle();</b>
+<b class="fc"><i>69</i>&nbsp;			if (!(title.equals(&quot;Most Played&quot;) || title.equals(&quot;Recently Played&quot;)) &amp;&amp;</b>
+<b class="fc"><i>70</i>&nbsp;					!playlist.getSongs().contains(selectedSong)) {</b>
+<b class="fc"><i>71</i>&nbsp;				playlistTitles.add(title);</b>
+<i>72</i>&nbsp;			}
+<b class="fc"><i>73</i>&nbsp;		}</b>
+<i>74</i>&nbsp;
+<b class="fc"><i>75</i>&nbsp;		contextMenu = new ContextMenu();</b>
+<i>76</i>&nbsp;
+<b class="fc"><i>77</i>&nbsp;		MenuItem playing = new MenuItem(&quot;Playing&quot;);</b>
+<b class="fc"><i>78</i>&nbsp;		playing.setStyle(&quot;-fx-text-fill: black&quot;);</b>
+<b class="fc"><i>79</i>&nbsp;		playing.setOnAction(e1 -&gt; {</b>
+<b class="nc"><i>80</i>&nbsp;			MusicPlayer.addSongToNowPlayingList(selectedSong);</b>
+<b class="nc"><i>81</i>&nbsp;		});</b>
+<i>82</i>&nbsp;
+<b class="fc"><i>83</i>&nbsp;		contextMenu.getItems().add(playing);</b>
+<i>84</i>&nbsp;
+<b class="fc"><i>85</i>&nbsp;		if (playlistTitles.size() &gt; 0) {</b>
+<b class="fc"><i>86</i>&nbsp;			SeparatorMenuItem item = new SeparatorMenuItem();</b>
+<b class="fc"><i>87</i>&nbsp;			item.getContent().setStyle(</b>
+<i>88</i>&nbsp;					&quot;-fx-border-width: 1 0 0 0; &quot; +
+<i>89</i>&nbsp;							&quot;-fx-border-color: #c2c2c2; &quot; +
+<i>90</i>&nbsp;							&quot;-fx-border-insets: 5 5 5 5;&quot;);
+<b class="fc"><i>91</i>&nbsp;			contextMenu.getItems().add(item);</b>
+<i>92</i>&nbsp;		}
+<i>93</i>&nbsp;
+<i>94</i>&nbsp;		// Creates a menu item for each playlist title and adds it to the context menu.
+<b class="fc"><i>95</i>&nbsp;		for (String title : playlistTitles) {</b>
+<b class="fc"><i>96</i>&nbsp;			MenuItem item = new MenuItem(title);</b>
+<b class="fc"><i>97</i>&nbsp;			item.setStyle(&quot;-fx-text-fill: black&quot;);</b>
+<i>98</i>&nbsp;
+<b class="fc"><i>99</i>&nbsp;			item.setOnAction(e2 -&gt; {</b>
+<i>100</i>&nbsp;				// Finds the desired playlist and adds the currently selected song to it.
+<b class="fc"><i>101</i>&nbsp;				String targetPlaylistTitle = item.getText();</b>
+<i>102</i>&nbsp;
+<i>103</i>&nbsp;				// Finds the correct playlist and adds the song to it.
+<b class="fc"><i>104</i>&nbsp;				playlists.forEach(playlist -&gt; {</b>
+<b class="fc"><i>105</i>&nbsp;					if (playlist.getTitle().equals(targetPlaylistTitle)) {</b>
+<b class="fc"><i>106</i>&nbsp;						playlist.addSong(selectedSong);</b>
+<i>107</i>&nbsp;					}
+<b class="fc"><i>108</i>&nbsp;				});</b>
+<b class="fc"><i>109</i>&nbsp;			});</b>
+<i>110</i>&nbsp;
+<b class="fc"><i>111</i>&nbsp;			contextMenu.getItems().add(item);</b>
+<b class="fc"><i>112</i>&nbsp;		}</b>
+<i>113</i>&nbsp;
+<b class="fc"><i>114</i>&nbsp;		contextMenu.setOpacity(0);</b>
+<b class="fc"><i>115</i>&nbsp;		contextMenu.show(playButton, x, y);</b>
+<b class="fc"><i>116</i>&nbsp;		showMenuAnimation.play();</b>
+<i>117</i>&nbsp;
+<b class="fc"><i>118</i>&nbsp;		e.consume();</b>
+<b class="fc"><i>119</i>&nbsp;	}</b>
+<i>120</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2020-12-15 20:05</div>
+</div>
+</body>
+</html>

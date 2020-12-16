@@ -1,3 +1,5 @@
+package app.musicplayer.view;
+
 import app.musicplayer.MusicPlayer;
 import javafx.application.Platform;
 import javafx.embed.swing.JFXPanel;

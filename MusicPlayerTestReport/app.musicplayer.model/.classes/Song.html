@@ -1,0 +1,325 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: Song</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">app.musicplayer.model</a> ]
+</div>
+
+<h1>Coverage Summary for Class: Song (app.musicplayer.model)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Song</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    59,3%
+  </span>
+  <span class="absValue">
+    (16/ 27)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    61,7%
+  </span>
+  <span class="absValue">
+    (50/ 81)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package app.musicplayer.model;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import java.io.File;
+<i>4</i>&nbsp;import java.nio.file.Path;
+<i>5</i>&nbsp;import java.nio.file.Paths;
+<i>6</i>&nbsp;import java.time.Duration;
+<i>7</i>&nbsp;import java.time.LocalDateTime;
+<i>8</i>&nbsp;
+<i>9</i>&nbsp;import javax.xml.parsers.DocumentBuilder;
+<i>10</i>&nbsp;import javax.xml.parsers.DocumentBuilderFactory;
+<i>11</i>&nbsp;import javax.xml.transform.OutputKeys;
+<i>12</i>&nbsp;import javax.xml.transform.Transformer;
+<i>13</i>&nbsp;import javax.xml.transform.TransformerFactory;
+<i>14</i>&nbsp;import javax.xml.transform.dom.DOMSource;
+<i>15</i>&nbsp;import javax.xml.transform.stream.StreamResult;
+<i>16</i>&nbsp;import javax.xml.xpath.XPath;
+<i>17</i>&nbsp;import javax.xml.xpath.XPathConstants;
+<i>18</i>&nbsp;import javax.xml.xpath.XPathExpression;
+<i>19</i>&nbsp;import javax.xml.xpath.XPathFactory;
+<i>20</i>&nbsp;
+<i>21</i>&nbsp;import org.w3c.dom.Document;
+<i>22</i>&nbsp;import org.w3c.dom.Node;
+<i>23</i>&nbsp;import org.w3c.dom.NodeList;
+<i>24</i>&nbsp;
+<i>25</i>&nbsp;import app.musicplayer.util.Resources;
+<i>26</i>&nbsp;import javafx.beans.property.BooleanProperty;
+<i>27</i>&nbsp;import javafx.beans.property.IntegerProperty;
+<i>28</i>&nbsp;import javafx.beans.property.SimpleBooleanProperty;
+<i>29</i>&nbsp;import javafx.beans.property.SimpleIntegerProperty;
+<i>30</i>&nbsp;import javafx.beans.property.SimpleStringProperty;
+<i>31</i>&nbsp;import javafx.beans.property.StringProperty;
+<i>32</i>&nbsp;import javafx.scene.image.Image;
+<i>33</i>&nbsp;
+<i>34</i>&nbsp;public final class Song implements Comparable&lt;Song&gt; {
+<i>35</i>&nbsp;
+<i>36</i>&nbsp;    private int id;
+<i>37</i>&nbsp;    private SimpleStringProperty title;
+<i>38</i>&nbsp;    private SimpleStringProperty artist;
+<i>39</i>&nbsp;    private SimpleStringProperty album;
+<i>40</i>&nbsp;    private SimpleStringProperty length;
+<i>41</i>&nbsp;    private long lengthInSeconds;
+<i>42</i>&nbsp;    private int trackNumber;
+<i>43</i>&nbsp;    private int discNumber;
+<i>44</i>&nbsp;    private SimpleIntegerProperty playCount;
+<i>45</i>&nbsp;    private LocalDateTime playDate;
+<i>46</i>&nbsp;    private String location;
+<i>47</i>&nbsp;    private SimpleBooleanProperty playing;
+<i>48</i>&nbsp;    private SimpleBooleanProperty selected;
+<i>49</i>&nbsp;
+<i>50</i>&nbsp;    /**
+<i>51</i>&nbsp;     * Constructor for the song class.
+<i>52</i>&nbsp;     *
+<i>53</i>&nbsp;     * @param id
+<i>54</i>&nbsp;     * @param title
+<i>55</i>&nbsp;     * @param artist
+<i>56</i>&nbsp;     * @param album
+<i>57</i>&nbsp;     * @param length
+<i>58</i>&nbsp;     * @param trackNumber
+<i>59</i>&nbsp;     * @param discNumber
+<i>60</i>&nbsp;     * @param playCount
+<i>61</i>&nbsp;     * @param playDate
+<i>62</i>&nbsp;     * @param location
+<i>63</i>&nbsp;     */
+<i>64</i>&nbsp;    public Song(int id, String title, String artist, String album, Duration length,
+<b class="fc"><i>65</i>&nbsp;                int trackNumber, int discNumber, int playCount, LocalDateTime playDate, String location) {</b>
+<i>66</i>&nbsp;
+<b class="fc"><i>67</i>&nbsp;        if (title == null) {</b>
+<b class="fc"><i>68</i>&nbsp;            Path path = Paths.get(location);</b>
+<b class="fc"><i>69</i>&nbsp;            String fileName = path.getFileName().toString();</b>
+<b class="fc"><i>70</i>&nbsp;            title = fileName.substring(0, fileName.lastIndexOf(&#39;.&#39;));</b>
+<i>71</i>&nbsp;        }
+<i>72</i>&nbsp;
+<b class="fc"><i>73</i>&nbsp;        if (album == null) {</b>
+<b class="fc"><i>74</i>&nbsp;            album = &quot;Unknown Album&quot;;</b>
+<i>75</i>&nbsp;        }
+<i>76</i>&nbsp;
+<b class="fc"><i>77</i>&nbsp;        if (artist == null) {</b>
+<b class="fc"><i>78</i>&nbsp;            artist = &quot;Unknown Artist&quot;;</b>
+<i>79</i>&nbsp;        }
+<i>80</i>&nbsp;
+<b class="fc"><i>81</i>&nbsp;        this.id = id;</b>
+<b class="fc"><i>82</i>&nbsp;        this.title = new SimpleStringProperty(title);</b>
+<b class="fc"><i>83</i>&nbsp;        this.artist = new SimpleStringProperty(artist);</b>
+<b class="fc"><i>84</i>&nbsp;        this.album = new SimpleStringProperty(album);</b>
+<b class="fc"><i>85</i>&nbsp;        this.lengthInSeconds = length.getSeconds();</b>
+<b class="fc"><i>86</i>&nbsp;        long seconds = length.getSeconds() % 60;</b>
+<b class="fc"><i>87</i>&nbsp;        this.length = new SimpleStringProperty(length.toMinutes() + &quot;:&quot; + (seconds &lt; 10 ? &quot;0&quot; + seconds : seconds));</b>
+<b class="fc"><i>88</i>&nbsp;        this.trackNumber = trackNumber;</b>
+<b class="fc"><i>89</i>&nbsp;        this.discNumber = discNumber;</b>
+<b class="fc"><i>90</i>&nbsp;        this.playCount = new SimpleIntegerProperty(playCount);</b>
+<b class="fc"><i>91</i>&nbsp;        this.playDate = playDate;</b>
+<b class="fc"><i>92</i>&nbsp;        this.location = location;</b>
+<b class="fc"><i>93</i>&nbsp;        this.playing = new SimpleBooleanProperty(false);</b>
+<b class="fc"><i>94</i>&nbsp;        this.selected = new SimpleBooleanProperty(false);</b>
+<b class="fc"><i>95</i>&nbsp;    }</b>
+<i>96</i>&nbsp;
+<i>97</i>&nbsp;    public int getId() {
+<b class="fc"><i>98</i>&nbsp;        return this.id;</b>
+<i>99</i>&nbsp;    }
+<i>100</i>&nbsp;
+<i>101</i>&nbsp;    public String getTitle() {
+<b class="fc"><i>102</i>&nbsp;        return this.title.get();</b>
+<i>103</i>&nbsp;    }
+<i>104</i>&nbsp;
+<i>105</i>&nbsp;    public StringProperty titleProperty() {
+<b class="nc"><i>106</i>&nbsp;        return this.title;</b>
+<i>107</i>&nbsp;    }
+<i>108</i>&nbsp;
+<i>109</i>&nbsp;    public String getArtist() {
+<b class="fc"><i>110</i>&nbsp;        return this.artist.get();</b>
+<i>111</i>&nbsp;    }
+<i>112</i>&nbsp;
+<i>113</i>&nbsp;    public StringProperty artistProperty() {
+<b class="nc"><i>114</i>&nbsp;        return this.artist;</b>
+<i>115</i>&nbsp;    }
+<i>116</i>&nbsp;
+<i>117</i>&nbsp;    public String getAlbum() {
+<b class="fc"><i>118</i>&nbsp;        return this.album.get();</b>
+<i>119</i>&nbsp;    }
+<i>120</i>&nbsp;
+<i>121</i>&nbsp;    public Image getArtwork() {
+<b class="fc"><i>122</i>&nbsp;        return Library.getAlbum(this.album.get()).getArtwork();</b>
+<i>123</i>&nbsp;    }
+<i>124</i>&nbsp;
+<i>125</i>&nbsp;    public StringProperty albumProperty() {
+<b class="nc"><i>126</i>&nbsp;        return this.album;</b>
+<i>127</i>&nbsp;    }
+<i>128</i>&nbsp;
+<i>129</i>&nbsp;    public String getLength() {
+<b class="fc"><i>130</i>&nbsp;        return this.length.get();</b>
+<i>131</i>&nbsp;    }
+<i>132</i>&nbsp;
+<i>133</i>&nbsp;    public StringProperty lengthProperty() {
+<b class="nc"><i>134</i>&nbsp;        return this.length;</b>
+<i>135</i>&nbsp;    }
+<i>136</i>&nbsp;
+<i>137</i>&nbsp;    public long getLengthInSeconds() {
+<b class="fc"><i>138</i>&nbsp;        return this.lengthInSeconds;</b>
+<i>139</i>&nbsp;    }
+<i>140</i>&nbsp;
+<i>141</i>&nbsp;    public int getTrackNumber() {
+<b class="fc"><i>142</i>&nbsp;        return this.trackNumber;</b>
+<i>143</i>&nbsp;    }
+<i>144</i>&nbsp;
+<i>145</i>&nbsp;    public int getDiscNumber() {
+<b class="fc"><i>146</i>&nbsp;        return this.discNumber;</b>
+<i>147</i>&nbsp;    }
+<i>148</i>&nbsp;
+<i>149</i>&nbsp;    public int getPlayCount() {
+<b class="fc"><i>150</i>&nbsp;        return this.playCount.get();</b>
+<i>151</i>&nbsp;    }
+<i>152</i>&nbsp;
+<i>153</i>&nbsp;    public IntegerProperty playCountProperty() {
+<b class="nc"><i>154</i>&nbsp;        return this.playCount;</b>
+<i>155</i>&nbsp;    }
+<i>156</i>&nbsp;
+<i>157</i>&nbsp;    public LocalDateTime getPlayDate() {
+<b class="fc"><i>158</i>&nbsp;        return this.playDate;</b>
+<i>159</i>&nbsp;    }
+<i>160</i>&nbsp;
+<i>161</i>&nbsp;    public String getLocation() {
+<b class="fc"><i>162</i>&nbsp;        return this.location;</b>
+<i>163</i>&nbsp;    }
+<i>164</i>&nbsp;
+<i>165</i>&nbsp;    public BooleanProperty playingProperty() {
+<b class="nc"><i>166</i>&nbsp;        return this.playing;</b>
+<i>167</i>&nbsp;    }
+<i>168</i>&nbsp;
+<i>169</i>&nbsp;    public boolean getPlaying() {
+<b class="nc"><i>170</i>&nbsp;        return this.playing.get();</b>
+<i>171</i>&nbsp;    }
+<i>172</i>&nbsp;
+<i>173</i>&nbsp;    public void setPlaying(boolean playing) {
+<b class="fc"><i>174</i>&nbsp;        this.playing.set(playing);</b>
+<b class="fc"><i>175</i>&nbsp;    }</b>
+<i>176</i>&nbsp;
+<i>177</i>&nbsp;    public BooleanProperty selectedProperty() {
+<b class="nc"><i>178</i>&nbsp;        return this.selected;</b>
+<i>179</i>&nbsp;    }
+<i>180</i>&nbsp;
+<i>181</i>&nbsp;    public boolean getSelected() {
+<b class="nc"><i>182</i>&nbsp;        return this.selected.get();</b>
+<i>183</i>&nbsp;    }
+<i>184</i>&nbsp;
+<i>185</i>&nbsp;    public void setSelected(boolean selected) {
+<b class="nc"><i>186</i>&nbsp;        this.selected.set(selected);</b>
+<b class="nc"><i>187</i>&nbsp;    }</b>
+<i>188</i>&nbsp;
+<i>189</i>&nbsp;    public void played() {
+<b class="fc"><i>190</i>&nbsp;        this.playCount.set(this.playCount.get() + 1);</b>
+<b class="fc"><i>191</i>&nbsp;        this.playDate = LocalDateTime.now();</b>
+<i>192</i>&nbsp;
+<b class="fc"><i>193</i>&nbsp;        Thread thread = new Thread(() -&gt; {</b>
+<i>194</i>&nbsp;
+<i>195</i>&nbsp;            try {
+<i>196</i>&nbsp;
+<b class="fc"><i>197</i>&nbsp;                DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();</b>
+<b class="fc"><i>198</i>&nbsp;                DocumentBuilder docBuilder = docFactory.newDocumentBuilder();</b>
+<b class="fc"><i>199</i>&nbsp;                Document doc = docBuilder.parse(Resources.JAR + &quot;library.xml&quot;);</b>
+<i>200</i>&nbsp;
+<b class="fc"><i>201</i>&nbsp;                XPathFactory xPathfactory = XPathFactory.newInstance();</b>
+<b class="fc"><i>202</i>&nbsp;                XPath xpath = xPathfactory.newXPath();</b>
+<i>203</i>&nbsp;
+<b class="fc"><i>204</i>&nbsp;                XPathExpression expr = xpath.compile(&quot;/library/songs/song/playCount[../id/text() = \&quot;&quot; + this.id + &quot;\&quot;]&quot;);</b>
+<b class="fc"><i>205</i>&nbsp;                Node playCount = ((NodeList) expr.evaluate(doc, XPathConstants.NODESET)).item(0);</b>
+<i>206</i>&nbsp;
+<b class="nc"><i>207</i>&nbsp;                expr = xpath.compile(&quot;/library/songs/song/playDate[../id/text() = \&quot;&quot; + this.id + &quot;\&quot;]&quot;);</b>
+<b class="nc"><i>208</i>&nbsp;                Node playDate = ((NodeList) expr.evaluate(doc, XPathConstants.NODESET)).item(0);</b>
+<i>209</i>&nbsp;
+<b class="nc"><i>210</i>&nbsp;                playCount.setTextContent(Integer.toString(this.playCount.get()));</b>
+<b class="nc"><i>211</i>&nbsp;                playDate.setTextContent(this.playDate.toString());</b>
+<i>212</i>&nbsp;
+<b class="nc"><i>213</i>&nbsp;                TransformerFactory transformerFactory = TransformerFactory.newInstance();</b>
+<b class="nc"><i>214</i>&nbsp;                Transformer transformer = transformerFactory.newTransformer();</b>
+<b class="nc"><i>215</i>&nbsp;                transformer.setOutputProperty(&quot;{http://xml.apache.org/xslt}indent-amount&quot;, &quot;4&quot;);</b>
+<b class="nc"><i>216</i>&nbsp;                transformer.setOutputProperty(OutputKeys.INDENT, &quot;yes&quot;);</b>
+<b class="nc"><i>217</i>&nbsp;                DOMSource source = new DOMSource(doc);</b>
+<b class="nc"><i>218</i>&nbsp;                File xmlFile = new File(Resources.JAR + &quot;library.xml&quot;);</b>
+<b class="nc"><i>219</i>&nbsp;                StreamResult result = new StreamResult(xmlFile);</b>
+<b class="nc"><i>220</i>&nbsp;                transformer.transform(source, result);</b>
+<i>221</i>&nbsp;
+<b class="nc"><i>222</i>&nbsp;            } catch (Exception ex) {</b>
+<i>223</i>&nbsp;
+<b class="nc"><i>224</i>&nbsp;                ex.printStackTrace();</b>
+<b class="nc"><i>225</i>&nbsp;            }</b>
+<i>226</i>&nbsp;
+<b class="nc"><i>227</i>&nbsp;        });</b>
+<i>228</i>&nbsp;
+<b class="fc"><i>229</i>&nbsp;        thread.start();</b>
+<b class="fc"><i>230</i>&nbsp;    }</b>
+<i>231</i>&nbsp;
+<i>232</i>&nbsp;    @Override
+<i>233</i>&nbsp;    public int compareTo(Song other) throws NullPointerException {
+<b class="nc"><i>234</i>&nbsp;        int discComparison = Integer.compare(this.discNumber, other.discNumber);</b>
+<i>235</i>&nbsp;
+<b class="nc"><i>236</i>&nbsp;        if (discComparison != 0) {</b>
+<b class="nc"><i>237</i>&nbsp;            return discComparison;</b>
+<i>238</i>&nbsp;        } else {
+<b class="nc"><i>239</i>&nbsp;            return Integer.compare(this.trackNumber, other.trackNumber);</b>
+<i>240</i>&nbsp;        }
+<i>241</i>&nbsp;    }
+<i>242</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2020-12-15 20:05</div>
+</div>
+</body>
+</html>
