@@ -14,7 +14,7 @@ import org.sikuli.script.ScreenImage;
 public class NextSongTest {
 
     @Test
-    public void PlaySong() throws InterruptedException, FindFailed {
+    public void PlayNextSong() throws InterruptedException, FindFailed {
         Screen screen = new Screen();
         ImagePath.add("test\\resources\\NextSong");
         Thread thread = new Thread(new Runnable() {
@@ -35,6 +35,8 @@ public class NextSongTest {
             }
         });
         thread.start();
+        screen.click("play.png");
+        Thread.sleep(100);
         screen.click("clickplaylist.png");
         Thread.sleep(100);
         screen.click("selectSong.png");
