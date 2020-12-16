@@ -1,8 +1,6 @@
 package app.musicplayer.model;
 
-import app.musicplayer.model.Album;
 import org.junit.jupiter.api.Test;
-import app.musicplayer.model.Song;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.testfx.framework.junit5.ApplicationExtension;
 
@@ -11,7 +9,6 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.fail;
 
 @ExtendWith(ApplicationExtension.class)
 public class AlbumTests {

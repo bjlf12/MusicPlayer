@@ -1,4 +1,4 @@
-package app.musicplayer.model;
+package app.musicplayer.view;
 
 import app.musicplayer.MusicPlayer;
 import javafx.application.Platform;
@@ -14,12 +14,12 @@ import org.sikuli.script.Screen;
 import org.testfx.framework.junit5.ApplicationExtension;
 
 @ExtendWith(ApplicationExtension.class)
-public class ControlSongMoment {
+public class ControlSongInfo {
 
     @Test
-    public void SongMoment() throws InterruptedException, FindFailed {
+    public void SongInfo() throws InterruptedException, FindFailed {
         Screen screen = new Screen();
-        ImagePath.add("test\\resources\\ControlSongBar");
+        ImagePath.add("test\\resources\\ControlSongInfo");
         Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
@@ -38,10 +38,8 @@ public class ControlSongMoment {
             }
         });
         thread.start();
-        screen.click("play.png");
-        Thread.sleep(5000);
-        screen.dragDrop("SongBar.png", "restart.png");
-        Thread.sleep(1000);
-        assertNotNull(screen.exists("end.png"));
+        screen.click("songs.png");
+        Thread.sleep(3000);
+        assertNotNull(screen.exists("songinfo.png"));
     }
 }
